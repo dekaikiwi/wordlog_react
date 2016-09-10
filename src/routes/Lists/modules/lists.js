@@ -47,7 +47,7 @@ const LISTS_ACTION_HANDLERS = {
     return ({ ...state, fetching: true })
   },
   [RECIEVE_LISTS]: (state: ListsStateObject, action: {payload: ListsObject}): ListsStateObject => {
-    return ({ ...state, lists: state.lists.concat(action.payload), fetching: false })
+    return ({ ...state, lists: action.payload, fetching: false })
   }
 }
 
@@ -55,13 +55,6 @@ const LISTS_ACTION_HANDLERS = {
 // Reducer
 // ------------------------------------
 
-let listMock = [{
-  words: [ ],
-  type: 'book',
-  name: 'Book Test',
-  inserted_at: '',
-  id: '1'
-}]
 
 const initialState: ListsStateObject = { fetching: false, lists: [] }
 export default function listsReducer (state: ListsStateObject = initialState, action: Action): ListsStateObject {

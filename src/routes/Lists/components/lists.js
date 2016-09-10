@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react'
+import { Link } from 'react-router'
 import classes from './Lists.scss'
 
 import type { ListsObject } from '../interfaces/lists'
@@ -30,7 +31,7 @@ export const Lists = (props: Props) => (
             <tbody>
               {props.lists.map((list, index) =>
                 <tr key={ index }>
-                  <td>{ list.name }</td>
+                  <td><Link to={`/lists/${list.id}`}> { list.name } </Link></td>
                   <td>{ list.type }</td>
                   <td>{ list.description }</td>
                 </tr>
@@ -40,6 +41,10 @@ export const Lists = (props: Props) => (
         </div>
       : null
     }
+    { props.children }
+    <label>New List</label>
+    <input type='text'/>
+    <button onClick={this.props.submitList}>Submit!</button>
   </div>
 )
 
