@@ -44,7 +44,7 @@ export const Lists = (props: Props) => (
     { props.children }
     <label>New List</label>
     <input type='text'/>
-    <button onClick={this.props.submitList}>Submit!</button>
+    <button>Submit!</button>
   </div>
 )
 

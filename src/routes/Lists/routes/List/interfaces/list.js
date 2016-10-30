@@ -10,5 +10,7 @@ export type ListObject = {
 
 export type ListStateObject = {
   fetching: boolean,
-  list: ListObject
+  list: ListObject,
+  translationSuggestions: Array,
+  suggestValue: String
 }
